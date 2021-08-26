@@ -18,6 +18,13 @@
 #define DOWN_PIN              HO4
 #define UP_PIN                HO2
 
+enum tbmode_t
+{
+    TB_NORMAL_MODE = 0,
+    TB_PRECISION_MODE,
+    TB_MODE3
+};
+
 typedef struct _track_speed {
   uint8_t bounce_interval;
   uint8_t base_move_pixels;
@@ -74,5 +81,7 @@ class Direction {
 void trackball_init(DEVTERM*);
 void trackball_task(DEVTERM*);
 
+
+void trackball_set_mode(enum tbmode_t mode);
 
 #endif
